@@ -456,9 +456,9 @@ main {
     grid-template-areas:
       "bioimage"
       "bio"
-      "job1"
-      "job2"
-      "job3";
+      "blog1"
+      "blog2"
+      "blog3";
 
     grid-template-columns: 1fr;
   }
@@ -477,4 +477,64 @@ main {
   .projects {
     grid-template-columns: 1fr;
   }
+}
+
+// Modal
+
+.modal-btn {
+  margin-top: 2rem;
+  background: $secondary-color;
+  color: #fff;
+}
+.modal-btn:hover {
+  background: darken($primary-color, 10);
+  color: lighten($primary-color, 20);
+  @include easeOut;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  transition: var(--transition);
+  visibility: hidden;
+  z-index: -10;
+}
+/* OPEN/CLOSE MODAL */
+.open-modal {
+  visibility: visible;
+  z-index: 10;
+}
+.modal-container {
+  background: lighten($primary-color, 20);
+  border-radius: 20px;
+  width: 80vw;
+  height: 70vh;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: scroll;
+
+  .modal-content {
+    margin: 25px 10px;
+  }
+}
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  // @include easeOut;
+}
+.close-btn:hover {
+  color: $secondary-color;
+  transform: scale(1.3);
 }
